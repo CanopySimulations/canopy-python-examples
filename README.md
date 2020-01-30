@@ -2,6 +2,8 @@
 
 This repository contains a set of Jupyter Notebooks containing examples of how to use the [Canopy Python](https://github.com/CanopySimulations/canopy-python) library.
 
+# Examples
+
 ## General Usage
 
 [Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) shows the various study input forms supported by the library, and how to ensure a study has completed before extracting the results.
@@ -17,6 +19,8 @@ This repository contains a set of Jupyter Notebooks containing examples of how t
 
 [Converting bump-stops from lookup to parametric.](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb)
 
+
+# Further Information
 
 ## Jupyter Notebooks
 
