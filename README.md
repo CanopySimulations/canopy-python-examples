@@ -6,7 +6,7 @@ This repository contains a set of Jupyter Notebooks containing examples of how t
 
 ## General Usage
 
-[Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) shows the various study input forms supported by the library, and how to ensure a study has completed before extracting the results.
+[Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) is a good place to start. It demonstrates loading configs and using them to run run studies on the platform, including how to ensure a study has completed before extracting the results.
 
 [Loading Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_vector_results.ipynb) shows how to load channel data from simulations for further analysis and visualization.
 
