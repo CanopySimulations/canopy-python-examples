@@ -6,18 +6,20 @@ This repository contains a set of Jupyter Notebooks containing examples of how t
 
 ## General Usage
 
-[Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) is a good place to start. It demonstrates loading configs and using them to run run studies on the platform, including how to ensure a study has completed before extracting the results.
+ - [Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) is a good place to start. It demonstrates loading configs and using them to run run studies on the platform, including how to ensure a study has completed before extracting the results.
 
-[Loading Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_vector_results.ipynb) shows how to load channel data from simulations for further analysis and visualization.
+- [Loading Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_vector_results.ipynb) shows how to load channel data from simulations for further analysis and visualization.
 
-[Loading Scalar Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_scalar_results.ipynb) shows how to load scalar results from simulations for further analysis and visualization.
+- [Loading Scalar Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_scalar_results.ipynb) shows how to load scalar results from simulations for further analysis and visualization.
 
-[Loading All Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_all_vector_results.ipynb) shows how you would go about loading every single channel from a study by using the vector metadata to extract the list of channels.
+- [Loading All Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_all_vector_results.ipynb) shows how you would go about loading every single channel from a study by using the vector metadata to extract the list of channels.
 
 
 ## Specialised Tasks
 
-[Converting bump-stops from lookup to parametric.](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb)
+- [Converting bump-stops from lookup to parametric.](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb)
+
+- [Finding the quickest 5 seconds to apply a power increase](https://github.com/CanopySimulations/canopy-python-examples/blob/master/finding_quickest_5_seconds_to_apply_power_increase.ipynb) uses the `dTLap_drEnginePowerFactor` channel to find the sLap ranges representing the optimal places to deploy 5 seconds of power increase.
 
 
 # Further Information
