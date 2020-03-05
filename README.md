@@ -2,6 +2,10 @@
 
 This repository contains a set of Jupyter Notebooks containing examples of how to use the [Canopy Python](https://github.com/CanopySimulations/canopy-python) library.
 
+Each example tends to install a specific version of the Canopy library, for example `pip install -q 'canopy==7.3'`. This is so that the example continues to run even if we make breaking changes to the underlying Canopy Python library. In your own code you can either install a specific version or use the latest version with `pip install -q canopy`. If you do find some of the example code fails to run in the latest version of the library, let us know and we will update it.
+
+Breaking changes to the Canopy Python library are documented in the [CHANGELOG.md](https://github.com/CanopySimulations/canopy-python/blob/master/CHANGELOG.md) file.
+
 # Examples
 
 ## General Usage
