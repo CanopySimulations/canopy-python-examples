@@ -4,6 +4,8 @@ This repository contains a set of Jupyter Notebooks containing examples of how t
 
 Each example tends to install a specific version of the Canopy library, for example `pip install -q 'canopy==7.3'`. This is so that the example continues to run even if we make breaking changes to the underlying Canopy Python library. In your own code you can either install a specific version or use the latest version with `pip install -q canopy`. If you do find some of the example code fails to run in the latest version of the library, let us know and we will update it.
 
+If you find you need to update your Canopy library you can run `pip install --upgrade canopy`. If you run this from a Jupyter Notebook or other runtime, make sure you restart the runtime after upgrading to pick up the newly installed version.
+
 Breaking changes to the Canopy Python library are documented in the [CHANGELOG.md](https://github.com/CanopySimulations/canopy-python/blob/master/CHANGELOG.md) file.
 
 # Examples
