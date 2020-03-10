@@ -9,8 +9,9 @@ Breaking changes to the Canopy Python library are documented in the [CHANGELOG.m
 # Examples
 
 ## General Usage
+ - [Loading and Saving Configs](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_and_saving_configs.ipynb) takes you through the basics of accessing and creating configs on the platform.
 
- - [Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) is a good place to start. It demonstrates loading configs and using them to run run studies on the platform, including how to ensure a study has completed before extracting the results.
+ - [Running Studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/running_studies.ipynb) demonstrates loading configs and using them to run run studies on the platform, including how to ensure a study has completed before extracting the results.
 
 - [Loading Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_vector_results.ipynb) shows how to load channel data from simulations for further analysis and visualization.
 
