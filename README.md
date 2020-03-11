@@ -24,7 +24,7 @@ Breaking changes to the Canopy Python library are documented in the [CHANGELOG.m
 
 ## Specialised Tasks
 
-- [Converting bump-stops from lookup to parametric.](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb) loads a car with a bump stop lookup, converts it to a parametric bump stop and saves the result as a new car on the platform.
+- [Converting bump-stops from lookup to parametric](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb) loads a car with a bump stop lookup, converts it to a parametric bump stop, and saves the result as a new car on the platform.
 
 - [Finding the quickest 5 seconds to apply a power increase](https://github.com/CanopySimulations/canopy-python-examples/blob/master/finding_quickest_5_seconds_to_apply_power_increase.ipynb) uses the `dTLap_drEnginePowerFactor` channel to find the sLap ranges representing the optimal places to deploy 5 seconds of power increase.
 
