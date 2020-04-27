@@ -2,7 +2,7 @@
 
 This repository contains a set of Jupyter Notebooks containing examples of how to use the [Canopy Python](https://github.com/CanopySimulations/canopy-python) library.
 
-Each example tends to install a specific version of the Canopy library, for example `pip install -q 'canopy==7.3'`. This is so that the example continues to run even if we make breaking changes to the underlying Canopy Python library. In your own code you can either install a specific version or use the latest version with `pip install -q canopy`. If you do find some of the example code fails to run in the latest version of the library, let us know and we will update it.
+Each example tends to install a specific version of the Canopy library, for example `pip install -q 'canopy==8.13'`. This is so that the example continues to run even if we make breaking changes to the underlying Canopy Python library. In your own code you can either install a specific version or use the latest version with `pip install -q canopy`. If you do find some of the example code fails to run in the latest version of the library, let us know and we will update it.
 
 If you find you need to update your Canopy library you can run `pip install --upgrade canopy`. If you run this from a Jupyter Notebook or other runtime, make sure you restart the runtime after upgrading to pick up the newly installed version.
 
@@ -45,7 +45,9 @@ Note that Google Colab uses a fairly old IPython runtime by default, so most of 
 
 ## Visualizations
 
-Most of the examples use [Matplotlib](https://matplotlib.org/) which has the advantage of rendering in GitHub. However numerous other options are available such as [Seaborn](https://seaborn.pydata.org/) which sits on top of Matplotlib, [Bokeh](https://docs.bokeh.org/) which has great interactivity support and [Altair](https://altair-viz.github.io/).
+Most of the examples use [Matplotlib](https://matplotlib.org/) which has the advantage of rendering in GitHub. However numerous other options are available such as [Seaborn](https://seaborn.pydata.org/) which sits on top of Matplotlib, [Bokeh](https://docs.bokeh.org/)  and [Plotly](https://plotly.com/) which have great interactivity support and [Altair](https://altair-viz.github.io/).
+
+[Plotly Express](https://medium.com/plotly/introducing-plotly-express-808df010143d) allows you to create some quite complex visualizations such as [parallel coordinates plots](https://plotly.com/python/parallel-coordinates-plot/) and [scatterplot matrices](https://plotly.com/python/splom/) with just a few lines of code.
 
 ## Data
 
