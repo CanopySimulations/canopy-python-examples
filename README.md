@@ -21,6 +21,8 @@ Breaking changes to the Canopy Python library are documented in the [CHANGELOG.m
 
 - [Loading All Vector Results](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_all_vector_results.ipynb) shows how you would go about loading every single channel from a study by using the vector metadata to extract the list of channels.
 
+- [Loading Study Data from Worksheets](https://github.com/CanopySimulations/canopy-python-examples/blob/master/loading_worksheet_study_data.ipynb) shows how to iterate through the rows of a worksheet and extract scalar and vector data from each study in the worksheet.
+
 - [Deleting old studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/deleting_old_studies.ipynb) shows how to bulk delete studies, should you wish to free up storage credits.
 
 ## Specialised Tasks
