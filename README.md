@@ -25,6 +25,8 @@ Breaking changes to the Canopy Python library are documented in the [CHANGELOG.m
 
 - [Deleting old studies](https://github.com/CanopySimulations/canopy-python-examples/blob/master/deleting_old_studies.ipynb) shows how to bulk delete studies, should you wish to free up storage credits.
 
+- [Encrypting Config Components](https://github.com/CanopySimulations/canopy-python-examples/blob/master/encrypting_config_components.ipynb) shows how to programatically encrypt part of a config.
+
 ## Specialised Tasks
 
 - [Converting bump-stops from lookup to parametric](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb) loads a car with a bump stop lookup, converts it to a parametric bump stop, and saves the result as a new car on the platform.
