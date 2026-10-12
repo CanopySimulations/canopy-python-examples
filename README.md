@@ -27,6 +27,8 @@ Breaking changes to the Canopy Python library are documented in the [CHANGELOG.m
 
 - [Encrypting Config Components](https://github.com/CanopySimulations/canopy-python-examples/blob/master/encrypting_config_components.ipynb) shows how to programatically encrypt part of a config.
 
+- [DiL Download](https://github.com/CanopySimulations/canopy-python-examples/blob/master/dil_download.ipynb) shows how to download the DiL package and extract the `CanopyDiL.lic` license file onto a location on your machine, allowing automatic license updates or refreshes of your DiL configuration.
+
 ## Specialised Tasks
 
 - [Converting bump-stops from lookup to parametric](https://github.com/CanopySimulations/canopy-python-examples/blob/master/converting_bump_stops_from_lookup_to_parametric.ipynb) loads a car with a bump stop lookup, converts it to a parametric bump stop, and saves the result as a new car on the platform.
