@@ -1,0 +1,980 @@
+{
+ "simVersion": "1.16004",
+ "customProperties": {},
+ "config": {
+  "chassis": {
+   "hRideFSetup": 0.055,
+   "hRideRSetup": 0.075,
+   "carRunningMass": {
+    "mCar": 1450,
+    "rWeightBalF": 0.48,
+    "name": "Running mass and weight distribution"
+   },
+   "ICar": [
+    600,
+    0,
+    0,
+    0,
+    1500,
+    0,
+    0,
+    0,
+    1500
+   ],
+   "mHubF": 40,
+   "IHubF": [
+    0.1,
+    0,
+    0,
+    0,
+    0.1,
+    0,
+    0,
+    0,
+    0.1
+   ],
+   "IWheelF": 1.5,
+   "mHubR": 45,
+   "IHubR": [
+    0.1,
+    0,
+    0,
+    0,
+    0.1,
+    0,
+    0,
+    0,
+    0.1
+   ],
+   "IWheelR": 1.5,
+   "rRideF": [
+    0,
+    0,
+    0
+   ],
+   "rRideR": [
+    -2.85,
+    0,
+    0
+   ],
+   "muChassis": 0.4,
+   "kVerticalSuspensionComplianceF": 10000000,
+   "kVerticalSuspensionComplianceR": 10000000,
+   "rRackRatio": 0.05,
+   "zCoG": -0.36,
+   "rideHeightAdjustMethodFront": "Corner Spring Shim",
+   "rideHeightAdjustMethodRear": "Corner Spring Shim"
+  },
+  "suspension": {
+   "front": {
+    "external": {
+     "aToeSetupAlignment": {
+      "name": "Angle Measurement",
+      "aToeSetup": 0.003490658503988659
+     },
+     "aCamberSetupAlignment": {
+      "name": "CoG Rotation",
+      "aCamberSetup": -0.054105206811824215
+     },
+     "pickUpPts": {
+      "name": "Double wishbone with coilover",
+      "travelLimits": {
+       "name": "Strut Limits",
+       "xStrutMax": 0.05,
+       "xStrutMin": -0.05,
+       "xRackMax": 0.02,
+       "xRackMin": -0.02
+      },
+      "rWheelC": [
+       0,
+       0.8446,
+       -0.328
+      ],
+      "rFLWBI": [
+       0.2152,
+       0.3629,
+       -0.1328
+      ],
+      "rFLWBO": [
+       0.0151,
+       0.7964,
+       -0.1735
+      ],
+      "rRLWBI": [
+       -0.0912,
+       0.3708,
+       -0.1443
+      ],
+      "rRLWBO": [
+       0.0151,
+       0.7964,
+       -0.1735
+      ],
+      "rFUWBI": [
+       0.0691,
+       0.5258,
+       -0.4142
+      ],
+      "rFUWBO": [
+       -0.0379,
+       0.749,
+       -0.4499
+      ],
+      "rRUWBI": [
+       -0.1475,
+       0.5275,
+       -0.3925
+      ],
+      "rRUWBO": [
+       -0.0379,
+       0.749,
+       -0.4499
+      ],
+      "rTRI": [
+       0.1608,
+       0.4585,
+       -0.2928
+      ],
+      "rTRO": [
+       0.1516,
+       0.7846,
+       -0.3484
+      ],
+      "rDamperStrutOutboard": [
+       0,
+       0.7509,
+       -0.2097
+      ],
+      "rDamperStrutInboard": [
+       -0.0454,
+       0.493,
+       -0.5789
+      ],
+      "strutConnection": "Rearward Lower Wishbone",
+      "rARBPickupInboard": [
+       -0.0109,
+       0.6163,
+       -0.4625
+      ],
+      "rARBSuspensionPickup": [
+       0.0226,
+       0.7267,
+       -0.2313
+      ],
+      "rUserTCP": [
+       0,
+       0.865,
+       0.065
+      ],
+      "rARBAxis": [
+       0.127,
+       0.32,
+       -0.4552
+      ],
+      "arbConnection": "Forward Lower Wishbone"
+     }
+    },
+    "internal": {
+     "pickUpPts": {
+      "name": "External strut"
+     },
+     "internalSetupAdjust": {
+      "name": "None"
+     },
+     "damper": {
+      "name": "Linear damper",
+      "dampingCoefficient": 1000
+     },
+     "antiRollBar": {
+      "name": "Linear spring",
+      "kAntiRollBar": 3000
+     },
+     "spring": {
+      "name": "Linear spring",
+      "kSpring": 205000
+     },
+     "bumpStop": {
+      "name": "Parametric bump-stop",
+      "pLinear": 0,
+      "pExponential": 400,
+      "xFreeGap": 0.045,
+      "freeGapReferenceCondition": "Design",
+      "pExponentialScaling": 4000
+     },
+     "droopStop": {
+      "name": "Spring LU",
+      "xData": [
+       0,
+       -0.0005,
+       -0.001,
+       -0.0015,
+       -0.002,
+       -0.003,
+       -0.004,
+       -0.005,
+       -0.006,
+       -0.007,
+       -0.008,
+       -0.01
+      ],
+      "FData": [
+       0,
+       -39,
+       -88,
+       -152,
+       -233,
+       -472,
+       -867,
+       -1517,
+       -2589,
+       -4357,
+       -7272,
+       -20000
+      ],
+      "xSpringGap": 0.04,
+      "freeGapReferenceCondition": "Design"
+     }
+    },
+    "rWheelDesign": 0.34,
+    "rSuspensionDatumOffset": [
+     0,
+     0,
+     0
+    ]
+   },
+   "rear": {
+    "external": {
+     "aToeSetupAlignment": {
+      "name": "Angle Measurement",
+      "aToeSetup": -0.0017453292519943296
+     },
+     "aCamberSetupAlignment": {
+      "name": "CoG Rotation",
+      "aCamberSetup": -0.04014257279586958
+     },
+     "pickUpPts": {
+      "name": "Double wishbone with coilover",
+      "travelLimits": {
+       "name": "Strut Limits",
+       "xStrutMax": 0.07,
+       "xStrutMin": -0.07,
+       "xRackMax": 0,
+       "xRackMin": 0
+      },
+      "rWheelC": [
+       -2.7274,
+       0.8377,
+       -0.3242
+      ],
+      "rFLWBI": [
+       -2.5695,
+       0.4441,
+       -0.1976
+      ],
+      "rFLWBO": [
+       -2.725,
+       0.7838,
+       -0.1835
+      ],
+      "rRLWBI": [
+       -2.8715,
+       0.4028,
+       -0.1547
+      ],
+      "rRLWBO": [
+       -2.725,
+       0.7838,
+       -0.1835
+      ],
+      "rFUWBI": [
+       -2.6164,
+       0.511,
+       -0.4007
+      ],
+      "rFUWBO": [
+       -2.6982,
+       0.7337,
+       -0.4563
+      ],
+      "rRUWBI": [
+       -2.8986,
+       0.5073,
+       -0.3962
+      ],
+      "rRUWBO": [
+       -2.6982,
+       0.7337,
+       -0.4563
+      ],
+      "rTRI": [
+       -2.8958,
+       0.4318,
+       -0.2464
+      ],
+      "rTRO": [
+       -2.9002,
+       0.7893,
+       -0.2708
+      ],
+      "rDamperStrutOutboard": [
+       -2.7359,
+       0.7065,
+       -0.2182
+      ],
+      "rDamperStrutInboard": [
+       -2.719,
+       0.5076,
+       -0.6088
+      ],
+      "strutConnection": "Upright",
+      "rUserTCP": [
+       -2.9167,
+       0.855,
+       0.085
+      ],
+      "rARBSuspensionPickup": [
+       -2.8203,
+       0.6734,
+       -0.2416
+      ],
+      "rARBAxis": [
+       -3.0204,
+       0.3487,
+       -0.3926
+      ],
+      "rARBPickupInboard": [
+       -2.8632,
+       0.6005,
+       -0.4012
+      ],
+      "arbConnection": "Rearward Lower Wishbone"
+     }
+    },
+    "internal": {
+     "pickUpPts": {
+      "name": "External strut"
+     },
+     "internalSetupAdjust": {
+      "name": "None"
+     },
+     "damper": {
+      "name": "Linear damper",
+      "dampingCoefficient": 1200
+     },
+     "antiRollBar": {
+      "name": "Linear spring",
+      "kAntiRollBar": 500
+     },
+     "spring": {
+      "name": "Linear spring",
+      "kSpring": 260000
+     },
+     "bumpStop": {
+      "name": "Parametric bump-stop",
+      "pLinear": 0,
+      "pExponential": 400,
+      "xFreeGap": 0.065,
+      "pExponentialScaling": 4000
+     },
+     "droopStop": {
+      "name": "Spring LU",
+      "xData": [
+       0,
+       -0.0005,
+       -0.001,
+       -0.0015,
+       -0.002,
+       -0.003,
+       -0.004,
+       -0.005,
+       -0.006,
+       -0.007,
+       -0.008,
+       -0.01
+      ],
+      "FData": [
+       0,
+       -39,
+       -88,
+       -152,
+       -233,
+       -472,
+       -867,
+       -1517,
+       -2589,
+       -4357,
+       -7272,
+       -20000
+      ],
+      "xSpringGap": 0.06,
+      "freeGapReferenceCondition": "Design"
+     }
+    },
+    "rWheelDesign": 0.35,
+    "rSuspensionDatumOffset": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "tyres": {
+   "name": "Canopy",
+   "front": {
+    "aPlySteer": 0,
+    "rUnloaded": 0.3625,
+    "xTreadWidth": 0.3,
+    "rMuyMax": 2.254,
+    "drMuy_dFzTyre": -0.00003,
+    "rMuxMax": 2.254,
+    "drMux_dFzTyre": -0.00003,
+    "dFy_daSlipPostPeak": 4,
+    "dFx_drSlipPostPeak": 4,
+    "dFyTyre_daSlipMax": 145000,
+    "dFxTyre_drSlipMax": 145000,
+    "FzTyreMaxStiffnessLat": -4600,
+    "rStiffnessShapingLat": 16,
+    "FzTyreMaxStiffnessLong": -4600,
+    "rStiffnessShapingLong": 16,
+    "dFy_daCamber": 0,
+    "FyZeroCamber": 0,
+    "xPneumaticTrail0": 1.25e-7,
+    "xPneumaticTrailMax": -0.00000835901,
+    "rPneumaticTrailShaping": -0.005604049,
+    "rPneumaticOffset": 50000,
+    "rCombinedScalingMin": 0.1,
+    "rCombinedSlipShaping": -0.025,
+    "vLowSpeed": 1,
+    "radiusEquations": {
+     "name": "Canopy",
+     "loadedRadius": {
+      "krLoaded": [
+       260000,
+       100,
+       3e-8,
+       0,
+       0
+      ]
+     }
+    },
+    "rollingResistance": {
+     "name": "Canopy equation",
+     "kRollingResistance": 750
+    },
+    "rGripFactor": 1
+   },
+   "rear": {
+    "aPlySteer": 0,
+    "rUnloaded": 0.3625,
+    "xTreadWidth": 0.31,
+    "rMuyMax": 2.346,
+    "drMuy_dFzTyre": -0.00003,
+    "rMuxMax": 2.346,
+    "drMux_dFzTyre": -0.00003,
+    "dFy_daSlipPostPeak": 4,
+    "dFx_drSlipPostPeak": 4,
+    "dFyTyre_daSlipMax": 145000,
+    "dFxTyre_drSlipMax": 145000,
+    "FzTyreMaxStiffnessLat": -4600,
+    "rStiffnessShapingLat": 16,
+    "FzTyreMaxStiffnessLong": -4600,
+    "rStiffnessShapingLong": 16,
+    "dFy_daCamber": 0,
+    "FyZeroCamber": 0,
+    "xPneumaticTrail0": 1.25e-7,
+    "xPneumaticTrailMax": -0.00000835901,
+    "rPneumaticTrailShaping": -0.005604049,
+    "rPneumaticOffset": 50000,
+    "rCombinedScalingMin": 0.1,
+    "rCombinedSlipShaping": -0.025,
+    "vLowSpeed": 1,
+    "radiusEquations": {
+     "name": "Canopy",
+     "loadedRadius": {
+      "krLoaded": [
+       280000,
+       100,
+       3e-8,
+       0,
+       0
+      ]
+     }
+    },
+    "rollingResistance": {
+     "name": "Canopy equation",
+     "kRollingResistance": 750
+    },
+    "rGripFactor": 1
+   },
+   "rGripFactor": 0.95,
+   "rGripBalanceUserOffset": 0
+  },
+  "aero": {
+   "PolynomialCLiftBodyFDefinition": [
+    {
+     "expression": "Const",
+     "coefficient": 1.120543
+    },
+    {
+     "expression": "hRideF",
+     "coefficient": -7.89115
+    },
+    {
+     "expression": "hRideF * hRideF",
+     "coefficient": 0.001042
+    },
+    {
+     "expression": "hRideR",
+     "coefficient": 3.95
+    },
+    {
+     "expression": "hRideR * hRideR",
+     "coefficient": 0.000792
+    }
+   ],
+   "PolynomialCLiftBodyRDefinition": [
+    {
+     "expression": "Const",
+     "coefficient": 1.7627
+    },
+    {
+     "expression": "hRideF",
+     "coefficient": 2.260454
+    },
+    {
+     "expression": "hRideF * hRideF",
+     "coefficient": -0.00713
+    },
+    {
+     "expression": "hRideR",
+     "coefficient": 7.90964
+    },
+    {
+     "expression": "hRideR * hRideR",
+     "coefficient": -56.4976
+    }
+   ],
+   "PolynomialCDragBodyDefinition": [
+    {
+     "expression": "Const",
+     "coefficient": 0.85
+    },
+    {
+     "expression": "hRideF",
+     "coefficient": -2.44
+    },
+    {
+     "expression": "hRideR",
+     "coefficient": 4.48
+    },
+    {
+     "expression": "hRideR * hRideR",
+     "coefficient": -20.36
+    }
+   ],
+   "CDragWheelF": 0.125,
+   "CDragWheelR": 0.125,
+   "CLiftWheelF": 0,
+   "CLiftWheelR": 0,
+   "ARef": 1,
+   "rCLiftBodyFFactor": 1,
+   "rCLiftBodyRFactor": 1,
+   "rCDragBodyFactor": 1
+  },
+  "brakes": {
+   "front": {
+    "rBrakeDisc": 0.155,
+    "muBrakes": {
+     "name": "Constant mu",
+     "muBrake": 0.45
+    },
+    "ABrakeCaliper": 0.003689,
+    "thermal": {
+     "brakeMassAndGeometry": {
+      "mBrakeAssembly": 1.5,
+      "brakeSpecificHeat": {
+       "name": "Constant Value",
+       "pSpecificHeat": 800
+      },
+      "ABrake": 0.4
+     },
+     "thermalBoundaryConditions": {
+      "name": "Periodic (start and end equal)."
+     },
+     "convectiveProperties": {
+      "vAirBasis": [
+       0
+      ],
+      "kConvectiveCooling": [
+       65
+      ]
+     },
+     "conductiveProperties": {
+      "kThermalConductivityToWheel": 30
+     }
+    }
+   },
+   "rear": {
+    "rBrakeDisc": 0.13,
+    "muBrakes": {
+     "name": "Constant mu",
+     "muBrake": 0.45
+    },
+    "ABrakeCaliper": 0.003689,
+    "thermal": {
+     "brakeMassAndGeometry": {
+      "mBrakeAssembly": 1.1,
+      "brakeSpecificHeat": {
+       "name": "Constant Value",
+       "pSpecificHeat": 800
+      },
+      "ABrake": 0.4
+     },
+     "thermalBoundaryConditions": {
+      "name": "Periodic (start and end equal)."
+     },
+     "convectiveProperties": {
+      "vAirBasis": [
+       0
+      ],
+      "kConvectiveCooling": [
+       30
+      ]
+     },
+     "conductiveProperties": {
+      "kThermalConductivityToWheel": 30
+     }
+    }
+   },
+   "bIncludeBrakeThermal": false
+  },
+  "control": {
+   "rBrakeBalF": 0.64
+  },
+  "powertrain": {
+   "engine": {
+    "IEngine": 0.05,
+    "MEngineMapData": {
+     "name": "Canopy Engine Map Model",
+     "nEngineBasis": [
+      0,
+      104.71975511965977,
+      209.43951023931953,
+      314.1592653589793,
+      418.87902047863906,
+      523.5987755982989,
+      628.3185307179587,
+      733.0382858376183,
+      837.7580409572781,
+      942.4777960769379
+     ],
+     "rThrottleBasis": [
+      0,
+      1
+     ],
+     "MEngineTable": [
+      [
+       0,
+       0
+      ],
+      [
+       -20,
+       79
+      ],
+      [
+       -40,
+       158
+      ],
+      [
+       -60,
+       238
+      ],
+      [
+       -77,
+       317
+      ],
+      [
+       -80,
+       396
+      ],
+      [
+       -80,
+       475
+      ],
+      [
+       -80,
+       525
+      ],
+      [
+       -80,
+       475
+      ],
+      [
+       -80,
+       300
+      ]
+     ],
+     "dmFuelTable": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       0.004
+      ],
+      [
+       0,
+       0.0079
+      ],
+      [
+       0,
+       0.0119
+      ],
+      [
+       0,
+       0.0159
+      ],
+      [
+       0,
+       0.0199
+      ],
+      [
+       0,
+       0.0238
+      ],
+      [
+       0,
+       0.0278
+      ],
+      [
+       0,
+       0.0318
+      ],
+      [
+       0,
+       0.0357
+      ]
+     ]
+    },
+    "transmissionConnection": "Rear Axle",
+    "rEnginePowerFactor": 1,
+    "nEngineLimits": {
+     "nEngineMaxConstant": 837.7580409572781
+    }
+   },
+   "rearAxleTransmission": {
+    "IGearBoxOnOutputShaft": 0.02,
+    "IGearBoxOnInputShaft": 0.02,
+    "rBevelRatio": [
+     0.265
+    ],
+    "gearBoxEfficiency": {
+     "name": "Constant gearbox efficiency",
+     "rGearBoxEfficiency": 0.985
+    },
+    "gearboxType": {
+     "name": "VShift",
+     "rGearRatios": [
+      [
+       0.391079916
+      ],
+      [
+       0.503763959
+      ],
+      [
+       0.646276132
+      ],
+      [
+       0.765588649
+      ],
+      [
+       0.901472348
+      ],
+      [
+       1.027413338
+      ]
+     ]
+    },
+    "diff": {
+     "name": "Diff demand map",
+     "inputNames": [
+      "MFinalDrive"
+     ],
+     "mapInputs": [
+      [
+       -2000
+      ],
+      [
+       -1900
+      ],
+      [
+       -1800
+      ],
+      [
+       -1700
+      ],
+      [
+       -1600
+      ],
+      [
+       -1500
+      ],
+      [
+       -1400
+      ],
+      [
+       -1300
+      ],
+      [
+       -1200
+      ],
+      [
+       -1100
+      ],
+      [
+       -1000
+      ],
+      [
+       -900
+      ],
+      [
+       -800
+      ],
+      [
+       -700
+      ],
+      [
+       -600
+      ],
+      [
+       -500
+      ],
+      [
+       -400
+      ],
+      [
+       -300
+      ],
+      [
+       -200
+      ],
+      [
+       -100
+      ],
+      [
+       0
+      ],
+      [
+       100
+      ],
+      [
+       200
+      ],
+      [
+       300
+      ],
+      [
+       400
+      ],
+      [
+       500
+      ],
+      [
+       600
+      ],
+      [
+       700
+      ],
+      [
+       800
+      ],
+      [
+       900
+      ],
+      [
+       1000
+      ],
+      [
+       1100
+      ],
+      [
+       1200
+      ],
+      [
+       1300
+      ],
+      [
+       1400
+      ],
+      [
+       1500
+      ],
+      [
+       1600
+      ],
+      [
+       1700
+      ],
+      [
+       1800
+      ],
+      [
+       1900
+      ],
+      [
+       2000
+      ]
+     ],
+     "MDiffDemandOutputs": [
+      1406,
+      1336,
+      1266,
+      1195,
+      1125,
+      1055,
+      984,
+      914,
+      844,
+      774,
+      703,
+      633,
+      563,
+      492,
+      422,
+      352,
+      281,
+      211,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      248,
+      298,
+      348,
+      397,
+      447,
+      497,
+      547,
+      596,
+      646,
+      696,
+      745,
+      795,
+      845,
+      894,
+      944,
+      994
+     ],
+     "slipModel": {
+      "name": "Viscous",
+      "kDiffViscous": 1
+     }
+    }
+   }
+  }
+ }
+}

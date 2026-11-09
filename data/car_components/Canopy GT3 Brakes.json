@@ -1,0 +1,71 @@
+{
+ "simVersion": "1.16004",
+ "path": "brakes",
+ "config": {
+  "front": {
+   "rBrakeDisc": 0.155,
+   "muBrakes": {
+    "name": "Constant mu",
+    "muBrake": 0.45
+   },
+   "ABrakeCaliper": 0.003689,
+   "thermal": {
+    "brakeMassAndGeometry": {
+     "mBrakeAssembly": 1.5,
+     "brakeSpecificHeat": {
+      "name": "Constant Value",
+      "pSpecificHeat": 800
+     },
+     "ABrake": 0.4
+    },
+    "thermalBoundaryConditions": {
+     "name": "Periodic (start and end equal)."
+    },
+    "convectiveProperties": {
+     "vAirBasis": [
+      0
+     ],
+     "kConvectiveCooling": [
+      65
+     ]
+    },
+    "conductiveProperties": {
+     "kThermalConductivityToWheel": 30
+    }
+   }
+  },
+  "rear": {
+   "rBrakeDisc": 0.13,
+   "muBrakes": {
+    "name": "Constant mu",
+    "muBrake": 0.45
+   },
+   "ABrakeCaliper": 0.003689,
+   "thermal": {
+    "brakeMassAndGeometry": {
+     "mBrakeAssembly": 1.1,
+     "brakeSpecificHeat": {
+      "name": "Constant Value",
+      "pSpecificHeat": 800
+     },
+     "ABrake": 0.4
+    },
+    "thermalBoundaryConditions": {
+     "name": "Periodic (start and end equal)."
+    },
+    "convectiveProperties": {
+     "vAirBasis": [
+      0
+     ],
+     "kConvectiveCooling": [
+      30
+     ]
+    },
+    "conductiveProperties": {
+     "kThermalConductivityToWheel": 30
+    }
+   }
+  },
+  "bIncludeBrakeThermal": false
+ }
+}

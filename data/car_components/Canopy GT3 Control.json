@@ -1,0 +1,7 @@
+{
+ "simVersion": "1.16004",
+ "path": "control",
+ "config": {
+  "rBrakeBalF": 0.64
+ }
+}

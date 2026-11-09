@@ -1,0 +1,357 @@
+{
+ "simVersion": "1.16004",
+ "path": "suspension",
+ "config": {
+  "front": {
+   "external": {
+    "aToeSetupAlignment": {
+     "name": "Angle Measurement",
+     "aToeSetup": 0.003490658503988659
+    },
+    "aCamberSetupAlignment": {
+     "name": "CoG Rotation",
+     "aCamberSetup": -0.054105206811824215
+    },
+    "pickUpPts": {
+     "name": "Double wishbone with coilover",
+     "travelLimits": {
+      "name": "Strut Limits",
+      "xStrutMax": 0.05,
+      "xStrutMin": -0.05,
+      "xRackMax": 0.02,
+      "xRackMin": -0.02
+     },
+     "rWheelC": [
+      0,
+      0.8446,
+      -0.328
+     ],
+     "rFLWBI": [
+      0.2152,
+      0.3629,
+      -0.1328
+     ],
+     "rFLWBO": [
+      0.0151,
+      0.7964,
+      -0.1735
+     ],
+     "rRLWBI": [
+      -0.0912,
+      0.3708,
+      -0.1443
+     ],
+     "rRLWBO": [
+      0.0151,
+      0.7964,
+      -0.1735
+     ],
+     "rFUWBI": [
+      0.0691,
+      0.5258,
+      -0.4142
+     ],
+     "rFUWBO": [
+      -0.0379,
+      0.749,
+      -0.4499
+     ],
+     "rRUWBI": [
+      -0.1475,
+      0.5275,
+      -0.3925
+     ],
+     "rRUWBO": [
+      -0.0379,
+      0.749,
+      -0.4499
+     ],
+     "rTRI": [
+      0.1608,
+      0.4585,
+      -0.2928
+     ],
+     "rTRO": [
+      0.1516,
+      0.7846,
+      -0.3484
+     ],
+     "rDamperStrutOutboard": [
+      0,
+      0.7509,
+      -0.2097
+     ],
+     "rDamperStrutInboard": [
+      -0.0454,
+      0.493,
+      -0.5789
+     ],
+     "strutConnection": "Rearward Lower Wishbone",
+     "rARBPickupInboard": [
+      -0.0109,
+      0.6163,
+      -0.4625
+     ],
+     "rARBSuspensionPickup": [
+      0.0226,
+      0.7267,
+      -0.2313
+     ],
+     "rUserTCP": [
+      0,
+      0.865,
+      0.065
+     ],
+     "rARBAxis": [
+      0.127,
+      0.32,
+      -0.4552
+     ],
+     "arbConnection": "Forward Lower Wishbone"
+    }
+   },
+   "internal": {
+    "pickUpPts": {
+     "name": "External strut"
+    },
+    "internalSetupAdjust": {
+     "name": "None"
+    },
+    "damper": {
+     "name": "Linear damper",
+     "dampingCoefficient": 1000
+    },
+    "antiRollBar": {
+     "name": "Linear spring",
+     "kAntiRollBar": 3000
+    },
+    "spring": {
+     "name": "Linear spring",
+     "kSpring": 205000
+    },
+    "bumpStop": {
+     "name": "Parametric bump-stop",
+     "pLinear": 0,
+     "pExponential": 400,
+     "xFreeGap": 0.045,
+     "freeGapReferenceCondition": "Design",
+     "pExponentialScaling": 4000
+    },
+    "droopStop": {
+     "name": "Spring LU",
+     "xData": [
+      0,
+      -0.0005,
+      -0.001,
+      -0.0015,
+      -0.002,
+      -0.003,
+      -0.004,
+      -0.005,
+      -0.006,
+      -0.007,
+      -0.008,
+      -0.01
+     ],
+     "FData": [
+      0,
+      -39,
+      -88,
+      -152,
+      -233,
+      -472,
+      -867,
+      -1517,
+      -2589,
+      -4357,
+      -7272,
+      -20000
+     ],
+     "xSpringGap": 0.04,
+     "freeGapReferenceCondition": "Design"
+    }
+   },
+   "rWheelDesign": 0.34,
+   "rSuspensionDatumOffset": [
+    0,
+    0,
+    0
+   ]
+  },
+  "rear": {
+   "external": {
+    "aToeSetupAlignment": {
+     "name": "Angle Measurement",
+     "aToeSetup": -0.0017453292519943296
+    },
+    "aCamberSetupAlignment": {
+     "name": "CoG Rotation",
+     "aCamberSetup": -0.04014257279586958
+    },
+    "pickUpPts": {
+     "name": "Double wishbone with coilover",
+     "travelLimits": {
+      "name": "Strut Limits",
+      "xStrutMax": 0.07,
+      "xStrutMin": -0.07,
+      "xRackMax": 0,
+      "xRackMin": 0
+     },
+     "rWheelC": [
+      -2.7274,
+      0.8377,
+      -0.3242
+     ],
+     "rFLWBI": [
+      -2.5695,
+      0.4441,
+      -0.1976
+     ],
+     "rFLWBO": [
+      -2.725,
+      0.7838,
+      -0.1835
+     ],
+     "rRLWBI": [
+      -2.8715,
+      0.4028,
+      -0.1547
+     ],
+     "rRLWBO": [
+      -2.725,
+      0.7838,
+      -0.1835
+     ],
+     "rFUWBI": [
+      -2.6164,
+      0.511,
+      -0.4007
+     ],
+     "rFUWBO": [
+      -2.6982,
+      0.7337,
+      -0.4563
+     ],
+     "rRUWBI": [
+      -2.8986,
+      0.5073,
+      -0.3962
+     ],
+     "rRUWBO": [
+      -2.6982,
+      0.7337,
+      -0.4563
+     ],
+     "rTRI": [
+      -2.8958,
+      0.4318,
+      -0.2464
+     ],
+     "rTRO": [
+      -2.9002,
+      0.7893,
+      -0.2708
+     ],
+     "rDamperStrutOutboard": [
+      -2.7359,
+      0.7065,
+      -0.2182
+     ],
+     "rDamperStrutInboard": [
+      -2.719,
+      0.5076,
+      -0.6088
+     ],
+     "strutConnection": "Upright",
+     "rUserTCP": [
+      -2.9167,
+      0.855,
+      0.085
+     ],
+     "rARBSuspensionPickup": [
+      -2.8203,
+      0.6734,
+      -0.2416
+     ],
+     "rARBAxis": [
+      -3.0204,
+      0.3487,
+      -0.3926
+     ],
+     "rARBPickupInboard": [
+      -2.8632,
+      0.6005,
+      -0.4012
+     ],
+     "arbConnection": "Rearward Lower Wishbone"
+    }
+   },
+   "internal": {
+    "pickUpPts": {
+     "name": "External strut"
+    },
+    "internalSetupAdjust": {
+     "name": "None"
+    },
+    "damper": {
+     "name": "Linear damper",
+     "dampingCoefficient": 1200
+    },
+    "antiRollBar": {
+     "name": "Linear spring",
+     "kAntiRollBar": 500
+    },
+    "spring": {
+     "name": "Linear spring",
+     "kSpring": 260000
+    },
+    "bumpStop": {
+     "name": "Parametric bump-stop",
+     "pLinear": 0,
+     "pExponential": 400,
+     "xFreeGap": 0.065,
+     "pExponentialScaling": 4000
+    },
+    "droopStop": {
+     "name": "Spring LU",
+     "xData": [
+      0,
+      -0.0005,
+      -0.001,
+      -0.0015,
+      -0.002,
+      -0.003,
+      -0.004,
+      -0.005,
+      -0.006,
+      -0.007,
+      -0.008,
+      -0.01
+     ],
+     "FData": [
+      0,
+      -39,
+      -88,
+      -152,
+      -233,
+      -472,
+      -867,
+      -1517,
+      -2589,
+      -4357,
+      -7272,
+      -20000
+     ],
+     "xSpringGap": 0.06,
+     "freeGapReferenceCondition": "Design"
+    }
+   },
+   "rWheelDesign": 0.35,
+   "rSuspensionDatumOffset": [
+    0,
+    0,
+    0
+   ]
+  }
+ }
+}

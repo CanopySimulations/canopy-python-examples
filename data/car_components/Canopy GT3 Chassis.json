@@ -1,0 +1,67 @@
+{
+ "simVersion": "1.16004",
+ "path": "chassis",
+ "config": {
+  "hRideFSetup": 0.055,
+  "hRideRSetup": 0.075,
+  "carRunningMass": {
+   "mCar": 1450,
+   "rWeightBalF": 0.48,
+   "name": "Running mass and weight distribution"
+  },
+  "ICar": [
+   600,
+   0,
+   0,
+   0,
+   1500,
+   0,
+   0,
+   0,
+   1500
+  ],
+  "mHubF": 40,
+  "IHubF": [
+   0.1,
+   0,
+   0,
+   0,
+   0.1,
+   0,
+   0,
+   0,
+   0.1
+  ],
+  "IWheelF": 1.5,
+  "mHubR": 45,
+  "IHubR": [
+   0.1,
+   0,
+   0,
+   0,
+   0.1,
+   0,
+   0,
+   0,
+   0.1
+  ],
+  "IWheelR": 1.5,
+  "rRideF": [
+   0,
+   0,
+   0
+  ],
+  "rRideR": [
+   -2.85,
+   0,
+   0
+  ],
+  "muChassis": 0.4,
+  "kVerticalSuspensionComplianceF": 10000000,
+  "kVerticalSuspensionComplianceR": 10000000,
+  "rRackRatio": 0.05,
+  "zCoG": -0.36,
+  "rideHeightAdjustMethodFront": "Corner Spring Shim",
+  "rideHeightAdjustMethodRear": "Corner Spring Shim"
+ }
+}

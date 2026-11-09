@@ -1,0 +1,95 @@
+{
+ "simVersion": "1.16004",
+ "path": "tyres",
+ "config": {
+  "name": "Canopy",
+  "front": {
+   "aPlySteer": 0,
+   "rUnloaded": 0.3625,
+   "xTreadWidth": 0.3,
+   "rMuyMax": 2.254,
+   "drMuy_dFzTyre": -0.00003,
+   "rMuxMax": 2.254,
+   "drMux_dFzTyre": -0.00003,
+   "dFy_daSlipPostPeak": 4,
+   "dFx_drSlipPostPeak": 4,
+   "dFyTyre_daSlipMax": 145000,
+   "dFxTyre_drSlipMax": 145000,
+   "FzTyreMaxStiffnessLat": -4600,
+   "rStiffnessShapingLat": 16,
+   "FzTyreMaxStiffnessLong": -4600,
+   "rStiffnessShapingLong": 16,
+   "dFy_daCamber": 0,
+   "FyZeroCamber": 0,
+   "xPneumaticTrail0": 1.25e-7,
+   "xPneumaticTrailMax": -0.00000835901,
+   "rPneumaticTrailShaping": -0.005604049,
+   "rPneumaticOffset": 50000,
+   "rCombinedScalingMin": 0.1,
+   "rCombinedSlipShaping": -0.025,
+   "vLowSpeed": 1,
+   "radiusEquations": {
+    "name": "Canopy",
+    "loadedRadius": {
+     "krLoaded": [
+      260000,
+      100,
+      3e-8,
+      0,
+      0
+     ]
+    }
+   },
+   "rollingResistance": {
+    "name": "Canopy equation",
+    "kRollingResistance": 750
+   },
+   "rGripFactor": 1
+  },
+  "rear": {
+   "aPlySteer": 0,
+   "rUnloaded": 0.3625,
+   "xTreadWidth": 0.31,
+   "rMuyMax": 2.346,
+   "drMuy_dFzTyre": -0.00003,
+   "rMuxMax": 2.346,
+   "drMux_dFzTyre": -0.00003,
+   "dFy_daSlipPostPeak": 4,
+   "dFx_drSlipPostPeak": 4,
+   "dFyTyre_daSlipMax": 145000,
+   "dFxTyre_drSlipMax": 145000,
+   "FzTyreMaxStiffnessLat": -4600,
+   "rStiffnessShapingLat": 16,
+   "FzTyreMaxStiffnessLong": -4600,
+   "rStiffnessShapingLong": 16,
+   "dFy_daCamber": 0,
+   "FyZeroCamber": 0,
+   "xPneumaticTrail0": 1.25e-7,
+   "xPneumaticTrailMax": -0.00000835901,
+   "rPneumaticTrailShaping": -0.005604049,
+   "rPneumaticOffset": 50000,
+   "rCombinedScalingMin": 0.1,
+   "rCombinedSlipShaping": -0.025,
+   "vLowSpeed": 1,
+   "radiusEquations": {
+    "name": "Canopy",
+    "loadedRadius": {
+     "krLoaded": [
+      280000,
+      100,
+      3e-8,
+      0,
+      0
+     ]
+    }
+   },
+   "rollingResistance": {
+    "name": "Canopy equation",
+    "kRollingResistance": 750
+   },
+   "rGripFactor": 1
+  },
+  "rGripFactor": 0.95,
+  "rGripBalanceUserOffset": 0
+ }
+}

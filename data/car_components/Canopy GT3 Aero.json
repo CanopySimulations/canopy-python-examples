@@ -1,0 +1,76 @@
+{
+ "simVersion": "1.16004",
+ "path": "aero",
+ "config": {
+  "PolynomialCLiftBodyFDefinition": [
+   {
+    "expression": "Const",
+    "coefficient": 1.120543
+   },
+   {
+    "expression": "hRideF",
+    "coefficient": -7.89115
+   },
+   {
+    "expression": "hRideF * hRideF",
+    "coefficient": 0.001042
+   },
+   {
+    "expression": "hRideR",
+    "coefficient": 3.95
+   },
+   {
+    "expression": "hRideR * hRideR",
+    "coefficient": 0.000792
+   }
+  ],
+  "PolynomialCLiftBodyRDefinition": [
+   {
+    "expression": "Const",
+    "coefficient": 1.7627
+   },
+   {
+    "expression": "hRideF",
+    "coefficient": 2.260454
+   },
+   {
+    "expression": "hRideF * hRideF",
+    "coefficient": -0.00713
+   },
+   {
+    "expression": "hRideR",
+    "coefficient": 7.90964
+   },
+   {
+    "expression": "hRideR * hRideR",
+    "coefficient": -56.4976
+   }
+  ],
+  "PolynomialCDragBodyDefinition": [
+   {
+    "expression": "Const",
+    "coefficient": 0.85
+   },
+   {
+    "expression": "hRideF",
+    "coefficient": -2.44
+   },
+   {
+    "expression": "hRideR",
+    "coefficient": 4.48
+   },
+   {
+    "expression": "hRideR * hRideR",
+    "coefficient": -20.36
+   }
+  ],
+  "CDragWheelF": 0.125,
+  "CDragWheelR": 0.125,
+  "CLiftWheelF": 0,
+  "CLiftWheelR": 0,
+  "ARef": 1,
+  "rCLiftBodyFFactor": 1,
+  "rCLiftBodyRFactor": 1,
+  "rCDragBodyFactor": 1
+ }
+}
