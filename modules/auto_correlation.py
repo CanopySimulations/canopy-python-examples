@@ -5,9 +5,9 @@
 Copy the run.json template and edit it for your tenant. Inputs accept config IDs (32-character hex or
 UUID), spec-relative JSON files, or names. Exact tenant names take precedence
 over Canopy defaults. To pin a tenant config, use its ID.
-Inline telemetry (JSON channels or chart CSV) is run once in a Telemetry
-simulation; the Star studies use the job reference saved in telemetry.json.
-Existing references need no preparation.
+Telemetry is required. Inline telemetry (JSON channels or chart CSV) is run
+once in a Telemetry simulation; an existing job reference skips that simulation.
+In both cases, the Star studies use the reference saved in telemetry.json.
 
 Use a dedicated worksheet_name: a run creates the worksheet or clears its
 rows, then links each study and its inputs. Choose a new output directory:
@@ -32,6 +32,7 @@ import logging
 import math
 from pathlib import Path
 import re
+from typing import Optional
 from uuid import UUID
 
 import canopy
@@ -41,10 +42,10 @@ from matplotlib.figure import Figure
 
 if __package__:
     from .config_objects import DELTA_CHANNEL, Exploration, Parameter, Telemetry, UserMaths
-    from .telemetry_creator import solve_telemetry, telemetry_study_inputs, write_export
+    from .telemetry_creator import TelemetryPreparation
 else:  # Also support running the file directly.
     from config_objects import DELTA_CHANNEL, Exploration, Parameter, Telemetry, UserMaths
-    from telemetry_creator import solve_telemetry, telemetry_study_inputs, write_export
+    from telemetry_creator import TelemetryPreparation
 
 
 def read_config(path):
@@ -64,9 +65,8 @@ class Spec:
     zones: dict | list
     parameters: tuple[Parameter, ...]
     sim_version: str | None = None
-    telemetry_type: str = "telemetry"
     distance_channel: str = "sRun"
-    speed_channel: str = "vCarMean"
+    speed_channel: str = "vCar"
     iterations: int = 12
     min_scale: float = 0.0625
     timeout_seconds: float = 1800
@@ -110,7 +110,7 @@ class Spec:
             raise ValueError("Expected iterations >= 1 and 0 < min_scale <= 1")
         if len(set(p.path for p in self.parameters)) != len(self.parameters):
             raise ValueError("Duplicate car parameter paths")
-        kinds = {"car", "track", "weather", self.telemetry_type}
+        kinds = {"car", "track", "weather", "telemetry"}
         if not kinds <= self.inputs.keys() or {"exploration", "userMaths"} & self.inputs.keys():
             raise ValueError(f"inputs must include {sorted(kinds)}; User Maths and exploration are generated")
         if not all(isinstance(s, str) and s.strip() for s in self.inputs.values()):
@@ -135,19 +135,16 @@ class Spec:
                              f"missing {required-supplied}, available sims {definition.sim_types}")
 
 
-def _config_id(source: str) -> str | None:
-    if re.fullmatch(r"[0-9a-fA-F]{32}", source):
-        return source
-    try:
-        return str(UUID(source))
-    except ValueError:
+def _config_id(source: str) -> Optional[str]:
+    if not re.fullmatch(r"[0-9a-fA-F]{32}", source):
         return None
+    return source
 
 
-def _load_local_input(kind, path, telemetry_type):
+def _load_local_input(kind, path):
     if path.suffix.lower() != ".csv":
         return canopy.LocalConfig(kind, path.stem, read_config(path))
-    if kind != telemetry_type:
+    if kind != "telemetry":
         raise ValueError(f"{kind}: {path.name} is a CSV, not a Canopy config JSON. "
                          "Use the ID, name, or exported JSON of the corresponding config.")
     return canopy.LocalConfig(kind, path.stem, Telemetry.from_csv(path).to_config())
@@ -175,7 +172,6 @@ async def _load_named_input(session, kind, source, path, version):
             if exc.status != 404:
                 raise
         else:
-            logging.info("No tenant %s named %r; using Canopy default %r", kind, source, name)
             return config
     raise canopy.NotFoundError(
         f"Could not resolve inputs.{kind}={source!r}: no local file at {path}, "
@@ -184,7 +180,7 @@ async def _load_named_input(session, kind, source, path, version):
     )
 
 
-async def load_input(session, kind, source, directory, version, telemetry_type="telemetry"):
+async def load_input(session, kind, source, directory, version):
     """Resolve by ID, file, tenant name, or built-in name. Stage local uploads."""
     config_id = _config_id(source)
     if config_id is not None:
@@ -192,7 +188,7 @@ async def load_input(session, kind, source, directory, version, telemetry_type="
     else:
         path = directory / source
         if path.is_file():
-            return _load_local_input(kind, path, telemetry_type)
+            return _load_local_input(kind, path)
         if Path(source).is_absolute() or source.startswith(("./", ".\\", "../", "..\\")):
             raise FileNotFoundError(f"inputs.{kind}: no local config file at {path}")
         config = await _load_named_input(session, kind, source, path, version)
@@ -237,7 +233,6 @@ class RunWorksheet:
         return self.worksheet.worksheet_id
 
     async def upload(self, kind, name, data, version):
-        # The convenience create_config helper doesn't expose parent_worksheet_id.
         self.session.authentication.authenticate()
         request = canopy.openapi.NewConfigData(name=name, config_type=kind, config=data, properties=[],
                                                sim_version=version, parent_worksheet_id=self.id)
@@ -390,24 +385,9 @@ def write_report(output, spec, names, steps, reason=None):
     (output / "optimisation-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-async def _prepare_inputs(worksheet, spec, sources, telemetry_inputs, output):
-    version = spec.sim_version
-    telemetry_type = spec.telemetry_type
-    configs = {kind: source.config_id or await worksheet.upload(kind, source.name, source.raw_data, version)
-               for kind, source in sources.items()
-               if telemetry_inputs is None or kind != telemetry_type}
-    if telemetry_inputs is None:
-        return configs, None
-
-    session = worksheet.session
-    telemetry = sources[telemetry_type]
-    telemetry_study, reference = await solve_telemetry(
-        session, {kind: configs[kind] for kind in telemetry_inputs if kind != telemetry_type},
-        version, spec.timeout_seconds, worksheet, telemetry=telemetry)
-    write_export(output / "telemetry.json", reference, version or session.tenant_sim_version.get())
-    configs[telemetry_type] = await worksheet.upload(
-        telemetry_type, f"{telemetry.name} (reference)", reference, version)
-    return configs, telemetry_study
+async def _prepare_inputs(worksheet, sources, version):
+    return {kind: source.config_id or await worksheet.upload(kind, source.name, source.raw_data, version)
+            for kind, source in sources.items() if kind != "telemetry"}
 
 
 def _build_star(parameters, baseline, initial, centre, lower, upper, *, first_step):
@@ -445,22 +425,22 @@ async def correlate(session, spec: Spec, directory, output):
     version = spec.sim_version
     sim = canopy.ensure_sim_type_string(spec.sim_type)
     parameters = spec.parameters
-    output.mkdir(parents=True, exist_ok=False)
-    spec.write_snapshot(output / "run.json")
     if session is None:
         session = get_session()
     session.authentication.authenticate()
     spec.validate_study(session)
-    sources = {kind: await load_input(session, kind, source, directory, version, spec.telemetry_type)
+    sources = {kind: await load_input(session, kind, source, directory, version)
                for kind, source in spec.inputs.items()}
-    telemetry_inputs = None
-    if "channels" in sources[spec.telemetry_type].raw_data:
-        telemetry_inputs = telemetry_study_inputs(session, spec.telemetry_type, sources, version)
+    telemetry = TelemetryPreparation.validate(session, sources, version)
     baseline = sources["car"].raw_data
     initial = [p.read(baseline) for p in parameters]
     bounds = [p.absolute_bounds(x) for p, x in zip(parameters, initial)]
+    output.mkdir(parents=True, exist_ok=False)
+    spec.write_snapshot(output / "run.json")
     worksheet = await RunWorksheet.open(session, spec.worksheet_name)
-    configs, telemetry_study = await _prepare_inputs(worksheet, spec, sources, telemetry_inputs, output)
+    configs = await _prepare_inputs(worksheet, sources, version)
+    configs["telemetry"], telemetry_study = await telemetry.prepare(
+        worksheet, configs, version, spec.timeout_seconds, output)
     configs["userMaths"] = await worksheet.upload("userMaths", "Correlation zone means",
                                                  maths.to_config(), version)
     study_inputs = {}
@@ -490,9 +470,8 @@ async def correlate(session, spec: Spec, directory, output):
     summary = {**asdict(best), "parameters": {p.path: value for p, value in zip(parameters, best.point)},
                "zones": spec.zones, "zone_means": dict(zip(names, best.means)), "stop_reason": reason,
                "inputs": study_inputs[best.study], "baseline_car": configs["car"],
-               "worksheet_id": worksheet.id, "worksheet_name": spec.worksheet_name}
-    if telemetry_study is not None:
-        summary["telemetry_study"] = telemetry_study
+               "worksheet_id": worksheet.id, "worksheet_name": spec.worksheet_name,
+               "telemetry_study": telemetry_study}
     (output / "best.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     write_report(output, spec, names, steps, reason)
     return summary
