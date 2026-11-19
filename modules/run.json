@@ -1,0 +1,39 @@
+{
+  "_notes": {
+    "getting_started": "Copy this template to a new JSON file, edit the example values, and pass that file to python -m modules.auto_correlation. This _notes section is ignored by the runner.",
+    "output_directory": "Choose a new directory. Relative paths here are relative to the spec. You can also pass --output to override this.",
+    "worksheet_name": "Choose a worksheet dedicated to correlation runs. Existing rows in that worksheet will be cleared.",
+    "study": "Choose a compatible study_type and sim_type. Set sim_version to pin a simulator version; null uses the tenant default.",
+    "inputs": "Replace the examples with config IDs, exact tenant or Canopy default names, or local file paths. Use config IDs to avoid changes in which named configs are selected. Telemetry can also be a Canopy chart CSV.",
+    "zones": "Name each distance range with an identifier. Bounds are in metres along the distance channel; choose ranges that make sense for your track and trace.",
+    "channels": "Use the distance and speed channel names provided by your simulation.",
+    "parameters": "Replace the example paths with numeric settings on your car. Absolute bounds are direct values, additive bounds are offsets from the original car, and multiplicative bounds are factors of the original value.",
+    "limits": "iterations caps the number of Star studies, min_scale is the smallest fraction of the original sweep half-width, and timeout_seconds limits each study wait.",
+    "rerun": "The saved run.json preserves the original paths. If inputs use relative paths, put a copy back alongside the original spec or update them to absolute paths. Use a new --output directory."
+  },
+  "output_directory": "example-correlation-run",
+  "worksheet_name": "Example Correlation Worksheet",
+  "study_type": "dynamicLap",
+  "sim_type": "DynamicLap",
+  "sim_version": null,
+  "inputs": {
+    "car": "Example Baseline Car",
+    "weather": "25 deg, dry",
+    "track": "Barcelona-F1",
+    "telemetry": ".\\reference-telemetry.csv"
+  },
+  "zones": {
+    "Straight": [100, 250],
+    "Corner": [490, 550]
+  },
+  "distance_channel": "sRun",
+  "speed_channel": "vCar",
+  "parameters": [
+    {"path": "car.tyres.front.rGripFactor", "valueType": "multiplicative", "min": 0.9, "max": 1.1},
+    {"path": "car.powertrain.engine.rEnginePowerFactor", "valueType": "absolute", "min": 0.9, "max": 1.1},
+    {"path": "car.aero.coefficientOffsets.CLiftBodyUserOffset", "valueType": "additive", "min": -0.1, "max": 0.1}
+  ],
+  "iterations": 5,
+  "min_scale": 0.0625,
+  "timeout_seconds": 1800
+}
