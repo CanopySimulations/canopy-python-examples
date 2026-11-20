@@ -35,6 +35,11 @@ Breaking changes to the Canopy Python library are documented in the [CHANGELOG.m
 
 - [Fitting aero data to a polynomial and RBF](https://github.com/CanopySimulations/canopy-python-examples/blob/master/fitting_aero_data_to_polynomial_and_rbf.ipynb) fits some data from a CSV file and saves the resulting polynomial and RBF aero definition to a car on the platform.
 
+## Canopy Challenges
+
+- [Hypercar Race Engineering Judging](https://github.com/CanopySimulations/canopy-python-examples/blob/master/hypercar_race_eng_judging.ipynb) demonstrates uploading local configs to a worksheet, running them, and downloading results for analysis.
+
+
 # Further Information
 
 ## Jupyter Notebooks
